@@ -12,6 +12,8 @@ NIVEL_CHOICES= [
 class Categoria(models.Model):
     nombre = models.TextField(max_length=20)
     descripcion = models.TextField(max_length=40)
+    def __str__(self):
+        return self.nombre
 
 class Comunicado(models.Model):
     titulo = models.TextField(max_length=20)
@@ -21,3 +23,5 @@ class Comunicado(models.Model):
     fecha_envio = models.DateTimeField()
     fecha_ultima_modificacion = models.DateTimeField()
     publicado_por = models.ForeignKey(User, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.titulo

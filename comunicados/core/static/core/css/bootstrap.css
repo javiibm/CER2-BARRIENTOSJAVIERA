@@ -1,0 +1,32 @@
+.col1{
+
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: aliceblue;
+
+}
+.col2{
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: aliceblue;
+}
+a{
+    color: black;
+    outline: none;
+    text-decoration: none;
+    background-color: aliceblue;
+}
+.col3{
+    padding-top: 3%;
+    padding-bottom: 3%;
+
+}
+h4{
+    padding-left: 1%;
+}
+h1{
+    text-align: center;
+}
+.btn{
+    background-color:azure;
+}
