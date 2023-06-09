@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comunicados</title>
     {% load static%}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}">
 
 </head>
+
 <body>
     <div class="container-fluid">
         <div class="row">
@@ -24,53 +26,62 @@
             </div>
             <div class="col-12 col4">
                 <h4>Filtrar</h4>
+                <h6>Por Nivel</h6>
             </div>
-            <div>
-                <span>
-                    Por Nivel
-                </span>
+            <div class="col-12 col7">
+                <form method="GET" action="{% url 'comunicados' %}">
+                <button class="btn filter-button" value="all" id="btn" onclick="getSelection">Todos</button>
+                <button class="btn filter-button" value="GEN" id="btn" onclick="getSelection">General</button>
+                <button class="btn filter-button" value="PRE" id="nivel" onclick="getSelection">Ciclo Preescolar</button>
+                <button class="btn filter-button" value="BAS" id="nivel">Ciclo Básico</button>
+                <button class="btn filter-button" value="MED" id="nivel">Ciclo Medio</button>
+                
+                <br>
             </div>
-                <div class="col-3">
-                    <button class="btn">General</button>
-                </div>
-                <div class="col-3">
-                    <button class="btn">Ciclo Preescolar</button>
-                </div>
-                <div class="col-3">
-                    <button class="btn">Ciclo Básico</button>
-                </div>
-                <div class="col-3">
-                    <button class="btn">Ciclo Medio</button>
-                </div>
-                <div>
-                    <span>
-                        Por Categoria
-                    </span>
-                    <div>
-                        {% for i in Comunicado.categoria %}
-                            <button class="btn">l</button>
-                        {%endfor%}
 
-                    </div>
-                    
+            <div class="col-12 col5">
+                <br>
 
-                </div>
-            <div class="col-12 col6">
-                <ol>
-                {% for c in comunicados %}
-                    <li>{{c.fecha_envio}}
-                        {{c.titulo}}
-                        {{c.detalle}}
-                        </li>
+                <h6>
+                    Por Categoria
+                </h6>
+                {% for c in categorias %}
+                <button class="btn btn-default filter-button " name="categoria" data-filter={{c.id}} onclick="{{getcategorias}}">{{c.nombre}}</button>
                 {%endfor%}
+            
+            </div>
+            </form>
+
+            <div class="col-12 col6">
+                <h4>Comunicados más recientes</h4>
+                <ol>
+                    
+                    {% for c in comunicados %}
+                    {{c.fecha_envio}}
+                    <br>
+                    {{c.titulo}}
+                    <br>
+                    {{c.detalle}}
+                    <br>
+                    {{c.nivel}}
+                    <br>
+                    {{c.categoria}}
+                    <br>
+                    {{c.publicado_por}}
+                    <br>
+                    <br>
+                    {%endfor%}
                 </ol>
             </div>
 
-
+            </ol>
         </div>
     </div>
+    </div>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

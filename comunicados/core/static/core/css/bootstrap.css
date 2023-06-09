@@ -2,30 +2,52 @@
 
     padding-top: 1%;
     padding-bottom: 1%;
-    background-color: aliceblue;
+    background-color: #B0DAFF;
 
 }
 .col2{
     padding-top: 1%;
     padding-bottom: 1%;
-    background-color: aliceblue;
+    background-color: #B0DAFF;
+}
+.col3{
+    padding-top: 36%;
+    padding-bottom: 5%;
+    padding-left: 2%;
+    background-color: #B9E9FC;
+    background-image: url(../img/colegio2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    
+}
+.col4{
+    padding-top: 2%;
+    background-color:#B9E9FC ;
+}
+.col5{
+    padding-bottom: 2%;
+    background-color: #B9E9FC;
+}
+.col6{
+    padding-top: 2%;
+    background-color: #DAF5FF;
+}
+.col7{
+    background-color: #B9E9FC;
 }
 a{
     color: black;
     outline: none;
     text-decoration: none;
-    background-color: aliceblue;
+    background-color:white;
+    border-radius: 5px
 }
-.col3{
-    padding-top: 3%;
-    padding-bottom: 3%;
 
-}
-h4{
-    padding-left: 1%;
-}
 h1{
-    text-align: center;
+    text-align:start;
+    font-size: 70px;;
+    color: antiquewhite;
 }
 .btn{
     background-color:azure;

@@ -10,13 +10,13 @@ NIVEL_CHOICES= [
 ]
 
 class Categoria(models.Model):
-    nombre = models.TextField(max_length=20)
+    nombre = models.TextField(max_length=40)
     descripcion = models.TextField(max_length=40)
     def __str__(self):
         return self.nombre
 
 class Comunicado(models.Model):
-    titulo = models.TextField(max_length=20)
+    titulo = models.TextField(max_length=40)
     detalle = models.TextField(max_length=40)
     nivel = models.CharField(max_length=20, choices= NIVEL_CHOICES)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
